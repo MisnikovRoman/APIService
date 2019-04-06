@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name         = "APIKit"
-	s.version      = "0.0.1"
+	s.version      = "0.0.2"
 	s.platform     = :ios, "12.0"
  	s.swift_version = '4.0'
 	s.summary      = "Simple and lightweight API service framework"
