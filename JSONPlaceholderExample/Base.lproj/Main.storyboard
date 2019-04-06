@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VZQ-Fo-aQM">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Postman-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JSONPlaceholderExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ссылка для загрузки" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L7H-pg-UAz">
+                                <rect key="frame" x="20" y="172" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZC-QU-TPM">
+                                <rect key="frame" x="20" y="218" width="130" height="30"/>
+                                <state key="normal" title="Загрузить данные"/>
+                                <connections>
+                                    <action selector="loadButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sxl-k8-vdm"/>
+                                </connections>
+                            </button>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sEB-6V-xcM">
+                                <rect key="frame" x="20" y="264" width="374" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="KNU-ih-jZu">
+                                <rect key="frame" x="188.5" y="544.5" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sEB-6V-xcM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6ti-RX-KyH"/>
+                            <constraint firstItem="L7H-pg-UAz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8IY-LH-F27"/>
+                            <constraint firstItem="CZC-QU-TPM" firstAttribute="top" secondItem="L7H-pg-UAz" secondAttribute="bottom" constant="16" id="KqA-ml-r3R"/>
+                            <constraint firstItem="sEB-6V-xcM" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Wmf-hp-H9h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="L7H-pg-UAz" secondAttribute="trailing" constant="20" id="Wu0-OL-cfb"/>
+                            <constraint firstItem="KNU-ih-jZu" firstAttribute="centerX" secondItem="sEB-6V-xcM" secondAttribute="centerX" id="epA-sM-efK"/>
+                            <constraint firstItem="KNU-ih-jZu" firstAttribute="centerY" secondItem="sEB-6V-xcM" secondAttribute="centerY" id="g5c-yQ-dgo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sEB-6V-xcM" secondAttribute="trailing" constant="20" id="kZH-wd-DMb"/>
+                            <constraint firstItem="CZC-QU-TPM" firstAttribute="leading" secondItem="L7H-pg-UAz" secondAttribute="leading" id="l6o-Dl-jiY"/>
+                            <constraint firstItem="L7H-pg-UAz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="oD9-Js-7iY"/>
+                            <constraint firstItem="sEB-6V-xcM" firstAttribute="top" secondItem="CZC-QU-TPM" secondAttribute="bottom" constant="16" id="yb5-xs-xZ6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Postman" id="xlr-Ur-cRE"/>
+                    <connections>
+                        <outlet property="loadingIndicator" destination="KNU-ih-jZu" id="1q3-Rc-X3Y"/>
+                        <outlet property="resultTextView" destination="sEB-6V-xcM" id="fZl-QL-xD5"/>
+                        <outlet property="urlTextField" destination="L7H-pg-UAz" id="PdX-FK-co3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852.17391304347836" y="87.723214285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wNK-nx-NG0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VZQ-Fo-aQM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="QoP-P7-xeO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5tl-U1-R73"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRy-eB-kkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128" y="88"/>
+        </scene>
+    </scenes>
+</document>
